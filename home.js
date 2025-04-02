@@ -5,7 +5,7 @@ import { Button } from 'react-native-elements';
 
 
 
-
+/* I put the stylesheet first just for fun */
 const styles = StyleSheet.create({
   buttonStyle: {
     padding: 15,
@@ -30,13 +30,15 @@ const styles = StyleSheet.create({
 
 
 export default function Home({ navigation }) {
-  // Sample exercise data
+  // exercise data
   const exercises = [
     { id: '1', type: 'Repetition', title: 'Push-ups', suggestedExercise: 'Squats' },
     { id: '2', type: 'Repetition', title: 'Squats', suggestedExercise: 'Push-ups' },
     { id: '3', type: 'Duration', title: 'Running', suggestedExercise: 'Jumping Jacks' },
     { id: '4', type: 'Duration', title: 'Jumping Jacks', suggestedExercise: 'Running' }
   ];
+  //Issue with why the pushup suggestion wouldnt work: a capital U in pushup.  Whoops
+  //I gave them separate identifiers but the titles and exercises were the problem
 
   const renderItem = ({ item }) => (
     <Button
@@ -49,7 +51,7 @@ export default function Home({ navigation }) {
       }
       buttonStyle={styles.buttonStyle}
       titleStyle={styles.buttonText}
-
+//check for which type it is
 
 
      />

@@ -1,4 +1,4 @@
-// App.js
+
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -23,6 +23,7 @@ export default function App() {
   return (
 <View style={styles.container}>
     <NavigationContainer>
+
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
         name="Home"
@@ -32,6 +33,12 @@ export default function App() {
           fontSize: 25,
           },
           headerTitleAlign: 'center',
+
+
+/*Each of these contain the separate screens, even though it seems like
+they would be in their own components.  So the css needs to be here to control all the headings */
+
+
         }}/>
 
 
@@ -54,6 +61,7 @@ export default function App() {
             title: 'Duration Exercise',
           headerTitleStyle:{
           fontSize: 25,
+
           },
           headerTitleAlign: 'center',
         }}

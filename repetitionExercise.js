@@ -10,17 +10,21 @@ import { Button } from 'react-native-elements';
 
 
 export default function RepetitionExercise({ route, navigation }) {
-  const { exercise, exercises } = route.params; // Accessing passed params
+  const { exercise, exercises } = route.params;
+  // passed params
   const [count, setCount] = useState(0);
 
   const resetCount = () => setCount(0);
   const increaseCount = () => setCount(count + 1);
 
+
+  //Text has both the title and the factor underneath it
   return (
     <View>
       <Text style={styles.textStyle}>{exercise.title}
       </Text>
-      <Text style={styles.textStyle}>Count: {count}</Text>
+      <Text style={styles.textStyle}>Count: {count}
+      </Text>
 
 
       <Button title="Increase" onPress={increaseCount}
@@ -54,7 +58,7 @@ export default function RepetitionExercise({ route, navigation }) {
     </View>
   );
 }
-
+//The styling for the buttons and the text
 const styles = StyleSheet.create({
   buttonStyle: {
   padding: 15,

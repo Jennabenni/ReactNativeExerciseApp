@@ -9,10 +9,10 @@ import { Button } from 'react-native-elements';
 
 
 
-
+//Similar deal with repetition
 
 export default function DurationExercise({ route, navigation }) {
-  const { exercise, exercises } = route.params; // Accessing passed params
+  const { exercise, exercises } = route.params;
   const [timer, setTimer] = useState(0);
   const [isTimerRunning, setIsTimerRunning] = useState(false);
 
@@ -22,9 +22,9 @@ export default function DurationExercise({ route, navigation }) {
     if (isTimerRunning) {
       interval = setInterval(() => {
         setTimer((prevTimer) => prevTimer + 1);
-      }, 1000); // Increment timer every second
+      }, 1000); // Increment in seconds
     } else if (!isTimerRunning && timer !== 0) {
-      clearInterval(interval); // Clear the interval when the timer is stopped
+      clearInterval(interval); // Clear
     }
 
     return () => clearInterval(interval); // Clean up the interval on unmount or when timer state changes
@@ -39,7 +39,7 @@ export default function DurationExercise({ route, navigation }) {
       setIsTimerRunning(true);
     }
   };
-
+//reset
   const resetTimer = () => {
     setTimer(0);
     setIsTimerRunning(false);
@@ -50,7 +50,7 @@ export default function DurationExercise({ route, navigation }) {
       <Text style={styles.textStyle}>{exercise.title}</Text>
       <Text style={styles.textStyle}>Time: {timer}s</Text>
 
-      {/* Start/Stop Timer Button */}
+
       <Button
         title={isTimerRunning ? 'Stop Timer' : 'Start Timer'}
         onPress={toggleTimer}
@@ -58,12 +58,12 @@ export default function DurationExercise({ route, navigation }) {
         titleStyle={styles.buttonText}
       />
 
-      {/* Reset Timer Button */}
+
       <Button title="Reset" onPress={resetTimer}
        buttonStyle={styles.buttonStyle}
        titleStyle={styles.buttonText} />
 
-      {/* Suggested Exercise Button */}
+
       <Button
         title={`Suggested: ${exercise.suggestedExercise}`}
         onPress={() => {
@@ -77,7 +77,7 @@ export default function DurationExercise({ route, navigation }) {
         titleStyle={styles.buttonText}
       />
 
-      {/* Home Button */}
+
       <Button
         title="Home"
         onPress={() => navigation.navigate('Home')}
